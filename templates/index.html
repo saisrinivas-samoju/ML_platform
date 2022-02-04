@@ -1,0 +1,39 @@
+{% extends 'header.html' %}
+
+{% block head %}
+
+<title>Home Page</title>
+<style>
+    .thumbnail
+    {
+    border:none
+    }
+    div.jumbotron.machine-learning {
+    color: #fff;
+    text-align: center;
+    background: url(https://static.vecteezy.com/system/resources/previews/002/151/447/non_2x/abstract-hud-ui-gui-sci-fi-hologram-frame-template-design-background-virtual-reality-illustration-vector.jpg);
+    background-size: cover;
+    background-position: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.thumbnail:hover
+{
+box-shadow: -2px 1px 21px -6px rgba(0,0,0,0.71);
+}
+</style>
+{% endblock %}
+
+{% block body %}
+
+     <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron machine-learning">
+                <h1 class="hero-title">Welcome</h1>
+                <p class="hero-subtitle" style="color:white;background-color:rgba(9, 40, 87,0.9);">Welcome to the Platform for Machine Learning model deployment! This platform will provide you the cloud platforms for your machine learning models and all the related files.</p>
+                <p><a class="btn btn-success" role="button" href="/project">Explore all projects </a></p>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}
