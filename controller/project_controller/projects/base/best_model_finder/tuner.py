@@ -1547,10 +1547,11 @@ class ModelFinder:
                 xgboost_score = accuracy_score(test_y, prediction_xgboost)
                 self.logger_object.log('Accuracy for XGBoost:' + str(xgboost_score))  # Log AUC
             else:
-                xgboost_score = roc_auc_score(test_y, y_scores, multi_class='ovr')  # AUC for XGBoost
-                self.logger_object.log('AUC for XGBoost:' + str(xgboost_score))  # Log AUC
                 # ROC Curve
                 y_scores = xgboost.predict_proba(test_x)
+                xgboost_score = roc_auc_score(test_y, y_scores, multi_class='ovr')  # AUC for XGBoost
+                self.logger_object.log('AUC for XGBoost:' + str(xgboost_score))  # Log AUC
+
                 # Saving ROC Curve
                 AccurayGraph().save_plot_multiclass_roc_curve(test_y, y_scores, xgboost,
                                                               project_id=self.project_id,
